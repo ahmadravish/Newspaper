@@ -21,9 +21,9 @@ p {
   text-align: center;
   position: relative;
 }
-
+/* 
 .headerobjectswrapper {
-}
+} */
 
 .subhead {
   text-transform: uppercase;
@@ -47,8 +47,6 @@ p {
   word-spacing: -0.31em;
   display: inline-block;
   margin: 30px 2% 0 2%;
-}
-.collumns {
 }
 
 .collumn {
@@ -247,7 +245,7 @@ p {
 }
 @media only all and (max-width: 600px) {
   .collumn {
-    width: 100%;
+    width: 50%;
   }
   .collumn + .collumn {
     border-left: none;
@@ -259,4 +257,120 @@ p {
     line-height: 54px;
     overflow: hidden;
   }
+}
+flex-row-container {
+  background: #aaa;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.flex-row-container > .flex-row-item {
+  flex: 1 1 30%; /*grow | shrink | basis */
+  height: 100px;
+}
+
+.flex-row-item {
+  background-color: #fff4e6;
+  border: 1px solid #f76707;
+  width: fit-content;
+  padding: 0%;
+}
+
+/* 
+====== 
+Fonts
+======
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300i,400|Solway:400,500&display=swap');
+/* 
+====== 
+Variables 
+======
+*/
+:root {
+  --primaryLightColor: #d4e6a5;
+  --primaryColor: #476a2e;
+  --primaryDarkColor: #c02c03;
+  --primaryFont: 'Open Sans', sans-serif;
+  --slantedFont: 'Solway', serif;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBackground: #f8f8f8;
+  --mainOverlay: rgba(35, 10, 36, 0.4);
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #afafaf;
+  --mainRed: #bd0303;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.3rem;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --mainBorderRadius: 0.25rem;
+  --smallWidth: 85vw;
+  --maxWidth: 40rem;
+  --fullWidth: 1170px;
+}
+/* 
+====== 
+Global Styles 
+======
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primaryFont);
+  color: var(--mainBlack);
+  background: var(--mainBackground);
+  line-height: 1.4;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.loading {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 1.7rem;
+  margin-top: 3rem;
+  letter-spacing: var(--mainSpacing);
+}
+
+.section-title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  margin-top: 1rem;
+}
+.cocktails-center {
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320.8px, 3fr));
+  column-gap: 0.8rem;
+  row-gap: 0.8rem;
+  align-items: start;
+}
+
+.cocktail {
+  background: var(--mainWhite);
+  margin-bottom: 2rem;
+  box-shadow: var(--lightShadow);
+  transition: var(--mainTransition);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--mainBorderRadius);
+}
+.cocktail:hover {
+  box-shadow: var(--darkShadow);
+}
+
+.cocktail-section {
+  text-align: center;
 }

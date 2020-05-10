@@ -1,16 +1,18 @@
 import React from 'react';
-//import ItemId from './components/ItemId';
 import './App.css';
 
 var newNews = [];
 function Newspaper({ title, text, by }) {
-  //console.log(item);
   return (
-    <article>
-      <h5 className='p-2 border'>{title}</h5>
-      <div className='p-2 border'>{text}</div>
-      <div className='p-2 border'>{by}</div>
-    </article>
+    <div className='cocktail'>
+      <div className='flex-row-item'>
+        <span class='headline hl3'>{title}</span>
+        <p>
+          <span class='headline hl4'>{by}</span>
+        </p>
+        <p>{text}</p>
+      </div>
+    </div>
   );
 }
 
@@ -57,9 +59,8 @@ function App() {
 
   //console.log(news);
   // console.log(news.length);
+  if (loading) return <h1>loading..</h1>;
 
-  if (loading) return <h2>loading...</h2>;
-  console.log(newNews);
   return (
     <section>
       <div className='head'>
@@ -77,11 +78,20 @@ function App() {
           York, MA - Thursday August 30, 1978 - Seven Pages
         </div>
       </div>
-      <div className='container mt-3'>
-        <div className='d-flex flex-wrap bg-light'>
-          {news.map((item) => {
-            return <Newspaper key={item.id} {...item} />;
-          })}
+
+      <div className='section'>
+        <div class='content'>
+          <div class='collumns'>
+            <div class='collumn'>
+              <div class='head'>
+                <div className='cocktails-center'>
+                  {news.map((item) => {
+                    return <Newspaper key={item.id} {...item} />;
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
